@@ -1,0 +1,50 @@
+<!-- Sarah Nasser -->
+{% extends "layout.html" %}
+
+{% block title %}{{ item.title }} Anime show - Details{% endblock %}
+
+{% block content %}
+    <div class="animeTitle"><strong>{{item.title}}</strong></div>
+    <div class="showSpecifications year">
+        ({{
+            item.start_year
+        }}-{% if item.end_year is not none %}<strong>{{ item.end_year }}</strong>{% endif %})
+    </div>    
+    <img src="{{item.image}}" alt="{{item.title}} image" class="animeImages img-fluid" referrerpolicy="no-referrer">
+
+    <div class="showSpecifications">
+        <strong>Genres:</strong> 
+        {% for genre in item.genres %}
+            <a href="{{ url_for('search_combined', q=genre) }}" style="font-weight: normal;">
+                {{ genre }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %} <br>
+
+        <strong>Average rating:</strong> {{item.average_rating}}/10 <br>
+        <strong>Age rating:</strong> {{item.age_rating}} <br>
+        <strong>Number of episodes:</strong> {{item.number_episodes}} episodes
+    </div> <br>
+
+    <div class="synopsis">
+        {{item.summary}} <br> <br>
+        <strong>Writer:</strong> 
+        <a href="{{ url_for('search_combined', q=item.writer) }}" style="font-weight: normal;">
+            {{ item.writer }}</a> <br>
+        <strong>Characters:</strong>
+        {% for character in item.characters %}
+            {{ character.strip().replace(" ×", "") }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %} <br> 
+    </div> <br>
+
+    <div class="tags">
+        <strong>Tags:</strong> 
+
+        {% for tag in item.tags %}
+            <a href="{{ url_for('search_combined', q=tag) }}" style="font-weight: normal;">
+                {{ tag.strip().replace(" ×", "") }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </div>
+    
+    <a href="{{ url_for('edit_item', item_id=item.id) }}" class="btn btn-sm btn-outline-secondary mt-2">
+        Edit
+    </a>
+{% endblock %}

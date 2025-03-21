@@ -1,0 +1,16 @@
+<!-- Sarah Nasser -->
+{% extends "layout.html" %}
+
+{% block title %}Anime Shows{% endblock %}
+
+{% block content %}
+    <div class="titleHomepage"><strong>The Anime Vault</strong></div>
+    <img src="https://sm.ign.com/ign_in/screenshot/default/anime-and-shonen-jump-protagonists-by-supersaiyancrash-d6mi3_2sc5.jpg" alt="Anime characters from various shows" class="homepageImg img-fluid">
+    <div class="purposeAudience">Whether you are a die hard anime fan or looking to get into anime, this is a database where 
+        you can search for shows you might like. You can also add new shows or edit details of currently existing shows in 
+        this database so that other users can benefit more from this database.</div> <br>
+
+    <div class="mostPopularShowsText"><strong>Most Popular Anime Shows this week:</strong></div>
+    <div id="popular-shows" class="row"></div>
+    <script src="{{ url_for('static', filename='homepage.js') }}"></script>
+{% endblock %}

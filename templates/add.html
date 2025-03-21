@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Anime{% endblock %}
+
+{% block content %}
+    <h2>Add a New Anime</h2>
+    <p id="success-message" class="text-success successText" style="display:none;">
+        New item successfully created. <a id="view-item-link" href="#">See it here</a>
+    </p>
+
+    <div id="success-message" class="alert alert-success" style="display: none;">
+        <strong>New item successfully created.</strong> 
+        <a id="view-item-link" href="#" class="btn btn-primary btn-sm">See it here</a>
+    </div>
+
+    <form id="add-form">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+            <div class="text-danger" id="title-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="start_year" class="form-label">Start Year</label>
+            <input type="number" class="form-control" id="start_year" name="start_year" min="1963" max="2025" step="1" placeholder="e.g., 1999">
+            <div class="text-danger" id="start-year-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="end_year" class="form-label">End Year (Optional)</label>
+            <input type="number" class="form-control" id="end_year" name="end_year" min="1965" max="2025" step="1" placeholder="e.g., 2020">
+            <div class="text-danger" id="end-year-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="image" name="image">
+            <div class="text-danger" id="image-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label>Select Genres (Choose at least one):</label>
+            <div id="genres-container">
+                <label><input type="checkbox" name="genres" value="Action"> Action</label> <br>
+                <label><input type="checkbox" name="genres" value="Adventure"> Adventure</label> <br>
+                <label><input type="checkbox" name="genres" value="Comedy"> Comedy</label> <br>
+                <label><input type="checkbox" name="genres" value="Drama"> Drama</label> <br>
+                <label><input type="checkbox" name="genres" value="Fantasy"> Fantasy</label> <br>
+                <label><input type="checkbox" name="genres" value="Horror"> Horror</label> <br>
+                <label><input type="checkbox" name="genres" value="Mystery"> Mystery</label> <br>
+                <label><input type="checkbox" name="genres" value="Romance"> Romance</label> <br>
+                <label><input type="checkbox" name="genres" value="Sci-Fi"> Sci-Fi</label> <br>
+                <label><input type="checkbox" name="genres" value="Thriller"> Thriller</label> <br>
+            </div>
+            <div class="text-danger" id="genres-error"></div>
+        </div>        
+
+        <div class="mb-3">
+            <label for="average_rating" class="form-label">Average Rating (0-10)</label>
+            <input type="number" class="form-control" id="average_rating" name="average_rating" step="0.1" min="0" max="10">
+            <div class="text-danger" id="rating-error"></div>
+        </div>        
+
+        <div class="mb-3">
+            <label for="age_rating" class="form-label">Age Rating</label>
+            <select class="form-control" id="age_rating" name="age_rating">
+                <option value="">Select an age rating</option>
+                <option value="TV-Y">TV-Y (All ages)</option>
+                <option value="TV-Y7">TV-Y7 (Ages 7+)</option>
+                <option value="TV-G">TV-G (General audience)</option>
+                <option value="TV-PG">TV-PG (Parental guidance suggested)</option>
+                <option value="TV-14">TV-14 (Ages 14+)</option>
+                <option value="TV-MA">TV-MA (Mature audiences)</option>
+                <option value="G">G (All ages, movies)</option>
+                <option value="PG">PG (Parental guidance suggested)</option>
+                <option value="PG-13">PG-13 (Ages 13+)</option>
+                <option value="R">R (Restricted, ages 17+)</option>
+                <option value="NC-17">NC-17 (Adults only)</option>
+            </select>
+            <div class="text-danger" id="age-rating-error"></div>
+        </div> 
+        
+        <div class="mb-3">
+            <label for="number_episodes" class="form-label">Number of Episodes</label>
+            <input type="number" class="form-control" id="number_episodes" name="number_episodes" min="1">
+            <div class="text-danger" id="episodes-error"></div>
+        </div>        
+
+        <div class="mb-3">
+            <label for="summary" class="form-label">Summary</label>
+            <textarea class="form-control" id="summary" name="summary"></textarea>
+            <div class="text-danger" id="summary-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="writer" class="form-label">Writer</label>
+            <input type="text" class="form-control" id="writer" name="writer">
+            <div class="text-danger" id="writer-error"></div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Characters</label>
+            <div id="characters-container" class="tags-container"></div>
+            <input type="text" id="character-input" class="form-control" placeholder="Type a character and press Enter">
+            <div class="text-danger" id="characters-error"></div> <!-- Error message container -->
+        </div>        
+
+        <div class="mb-3">
+            <label class="form-label">Tags</label>
+            <div id="tags-container" class="tags-container"></div>
+            <input type="text" id="tag-input" class="form-control" placeholder="Type a tag and press Enter">
+            <div class="text-danger" id="tags-error"></div> <!-- Error message container -->
+        </div>
+        <div class="mb-3">
+            <label for="preview" class="form-label">Preview</label>
+            <textarea class="form-control" id="preview" name="preview"></textarea>
+            <div class="text-danger" id="preview-error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <script src="{{ url_for('static', filename='add.js') }}"></script>
+{% endblock %}

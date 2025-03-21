@@ -1,0 +1,42 @@
+<!-- Sarah Nasser -->
+{% extends "layout.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+    <h2>Search Results</h2>
+    <p>
+        Showing results for:
+        {% if query %} "<strong>{{ query }}</strong>" {% endif %}
+    </p>
+    
+    {% if unique_results_list %}
+        <p><strong>{{ unique_results_list|length }} results found</strong></p>
+        {% for item in unique_results_list %}
+        <div class="searchResultContainer">
+            <span class="searchResultsTitle">
+                <a href="{{ item.link }}" class="custom-link">{{ item.title | highlight(query) | safe }}</a>
+            </span>
+            <a href="{{item.link}}"><img src="{{ item.image }}" alt="{{ item.title }} image" class="searchResultsImages img-fluid" referrerpolicy="no-referrer"></a>
+            {{item.preview | highlight(query) | safe}}
+        </div>
+
+        Genres: 
+        {% for genre in item.genres %}
+            {{ genre | highlight(query) | safe }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        <br>
+
+        Writer: {{ item.writer | highlight(query) | safe }} <br>
+
+        Tags: 
+        {% for tag in item.tags %}
+            {{ tag.strip().replace(" ×", "") | highlight(query) | safe }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        <br><br>
+    {% endfor %}
+
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}

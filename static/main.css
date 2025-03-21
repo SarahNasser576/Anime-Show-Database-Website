@@ -1,0 +1,188 @@
+/* Sarah Nasser */
+body {
+    background-color: #dedbdb5e;
+    color: #434141;
+}
+
+.btn {
+    background-color: #EFC88B;
+}
+
+.navigationBar {
+    background-color: #CF5C36;
+}
+
+.navbar-brand svg {
+    width: 35px;  /* Adjust size */
+    height: 35px;
+    margin-right: 10px;
+    stroke: #434141;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #434141;
+    font-size: 1rem !important;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) !important;
+    line-height: var(--bs-body-line-height) !important;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem !important;
+}
+
+.titleHomepage {
+    font-size: 60px;
+    text-align: center;
+}
+
+.homepageImg {
+    width: 100%;
+    height: 560px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
+.purposeAudience {
+    font-size: 25px;
+}
+
+.mostPopularShowsText {
+    font-size: 40px;
+    text-align: center;
+}
+
+.popularShowsImagesContainer {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.popularShowsImages {
+    /*max-width: 100%;*/
+    max-height: 100%;
+    /*object-fit: contain;*/
+    width: 500px;
+}
+
+.custom-link {
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+.custom-link:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.animeImages {
+    width: 100%;
+    height: 520px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
+.animeTitle {
+    font-size: 60px;
+    text-align: center;
+}
+
+.year,
+.showSpecifications {
+    font-size: 30px;
+}
+
+.year {
+    text-align: center;
+}
+
+.synopsis {
+    font-size: 23px;
+}
+
+.tags {
+    font-size: 19px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.add-tag {
+    display: inline-flex;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+}
+
+#add-form, #edit-form {
+    max-width: 1000px;
+}
+
+.remove-tag {
+    color: red;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.searchResultsTitle {
+    font-size: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+footer {
+    text-align: left;
+    padding: 10px;
+    background: #f8f9fa;
+    width: 100%;
+    color: #434141;
+}
+
+.successText {
+    font-size: 20px;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.searchResultsImages {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.titleHomePageLink {
+    font-size: 20px;
+}
