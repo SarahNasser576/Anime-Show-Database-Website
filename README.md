@@ -1,11 +1,11 @@
-# Website description
+# Full-Stack Anime Database Website
 
 This anime database website allows you to add, edit, and search for anime records across titles, show previews, genres, writers, and tags. 
 
-# Note
+### Note
 You can type any number of characters in the search bar. If you enter the letter "t," for example, you will get all anime shows that contain the letter "t" in its title, preview, writer, or in at least one of its genres or tags. The search feature is not case-sensititve, and typing no characters in the search bar or only typing whitespaces will give you all anime show search results.
 
-# How to run my program
+### How to run my program
 1. Have the GitHub repository code saved on an IDE or terminal. Ensure that all files are in their right folders.
 2. Install Python on your terminal. If you're using macOS, type the command: **brew install python**. If you're using Windows, type the command: **py --version**, but if Python is still not installed, download it from https://www.python.org/ and check the box that says "Add Python to PATH" during installation.
 3. OPTIONAL: create a virtual environment. In your terminal, inside the project folder, type the command: **python -m venv venv**. Then activate it: **venv\Scripts\activate**. If you have followed these steps correctly, you will see (venv) at the beginning of the terminal line.
