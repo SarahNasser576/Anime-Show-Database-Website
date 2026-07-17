@@ -1,6 +1,6 @@
 # Website description
 
-This anime show database website allows you to search for anime shows and add or edit new show entries. As of now, this website does not allow you to search for anime characters or add or edit new characters. Mangas that haven't been adapted into anime yet are not included in the list of show entries on this website. You can only search for titles, show previews, genres, writers, and tags. 
+This anime database website allows you to add, edit, and search for anime records across titles, show previews, genres, writers, and tags. 
 
 # Note
 You can type any number of characters in the search bar. If you enter the letter "t," for example, you will get all anime shows that contain the letter "t" in its title, preview, writer, or in at least one of its genres or tags. The search feature is not case-sensititve, and typing no characters in the search bar or only typing whitespaces will give you all anime show search results.
@@ -12,4 +12,3 @@ You can type any number of characters in the search bar. If you enter the letter
 4. Install Flask on your terminal. Type the command: **pip install Flask**.
 5. In the terminal, type the command: **python server.py**. You will get a website link with port number 5001. For example, you might see "Running on http://127.0.0.1:5001" in your terminal.
 6. Copy and paste that link into your web browser. That will open up the website.
-7. Have fun!
